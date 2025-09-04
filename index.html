@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Housekeeping Tools Reference</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f7fa;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      color: #333;
+    }
+    #searchBar {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 10px;
+      width: 60%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .tool-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .tool-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .tool-card:hover {
+      transform: scale(1.02);
+    }
+    .tool-card img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .qr-code {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Housekeeping Tools, Materials & Equipment</h1>
+  <p>Scan the QR codes or use the search bar below to find a tool.</p>
+  <input type="text" id="searchBar" placeholder="Search for a tool...">
+</header>
+
+<div class="tool-list" id="toolList">
+
+  <!-- Tool 1: Broom -->
+  <div class="tool-card" id="broom">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Broom_straw.jpg" alt="Broom">
+    <h2>Broom</h2>
+    <p><strong>Definition:</strong> A cleaning tool with stiff fibers (bristles) attached to a handle, used for sweeping dirt and dust.</p>
+    <p><strong>Uses:</strong> Sweeping floors, sidewalks, and other surfaces to remove dust, dirt, and debris.</p>
+    <div class="qr-code"><canvas id="qr-broom"></canvas></div>
+  </div>
+
+  <!-- Tool 2: Dustpan -->
+  <div class="tool-card" id="dustpan">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Dustpan.jpg" alt="Dustpan">
+    <h2>Dustpan</h2>
+    <p><strong>Definition:</strong> A flat container with a handle, used with a broom to collect dust and dirt.</p>
+    <p><strong>Uses:</strong> Collecting dirt, dust, and small debris after sweeping.</p>
+    <div class="qr-code"><canvas id="qr-dustpan"></canvas></div>
+  </div>
+
+  <!-- Tool 3: Mop -->
+  <div class="tool-card" id="mop">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/String_mop.jpg" alt="Mop">
+    <h2>Mop</h2>
+    <p><strong>Definition:</strong> A tool with absorbent material attached to a handle, used for cleaning floors.</p>
+    <p><strong>Uses:</strong> Wiping and cleaning wet or dirty floors, often with water and cleaning solution.</p>
+    <div class="qr-code"><canvas id="qr-mop"></canvas></div>
+  </div>
+
+  <!-- Tool 4: Bucket -->
+  <div class="tool-card" id="bucket">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Plastic_bucket.jpg" alt="Bucket">
+    <h2>Bucket</h2>
+    <p><strong>Definition:</strong> A round container used for carrying water or cleaning solutions.</p>
+    <p><strong>Uses:</strong> Holding water, detergents, or cleaning mixtures when mopping or washing.</p>
+    <div class="qr-code"><canvas id="qr-bucket"></canvas></div>
+  </div>
+
+  <!-- Tool 5: Vacuum Cleaner -->
+  <div class="tool-card" id="vacuum">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Upright_vacuum_cleaner.jpg" alt="Vacuum Cleaner">
+    <h2>Vacuum Cleaner</h2>
+    <p><strong>Definition:</strong> An electrical appliance that uses suction to remove dirt and dust from surfaces.</p>
+    <p><strong>Uses:</strong> Cleaning carpets, floors, upholstery, and other surfaces efficiently.</p>
+    <div class="qr-code"><canvas id="qr-vacuum"></canvas></div>
+  </div>
+
+  <!-- Tool 6: Duster -->
+  <div class="tool-card" id="duster">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Feather_duster.jpg" alt="Duster">
+    <h2>Duster</h2>
+    <p><strong>Definition:</strong> A tool with soft feathers or fibers used for removing dust from surfaces.</p>
+    <p><strong>Uses:</strong> Dusting furniture, shelves, appliances, and delicate items.</p>
+    <div class="qr-code"><canvas id="qr-duster"></canvas></div>
+  </div>
+
+  <!-- Tool 7: Sponge -->
+  <div class="tool-card" id="sponge">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Sponge.jpg" alt="Sponge">
+    <h2>Sponge</h2>
+    <p><strong>Definition:</strong> A soft, porous cleaning material that absorbs liquid.</p>
+    <p><strong>Uses:</strong> Washing dishes, cleaning surfaces, and absorbing spills.</p>
+    <div class="qr-code"><canvas id="qr-sponge"></canvas></div>
+  </div>
+
+  <!-- Tool 8: Gloves -->
+  <div class="tool-card" id="gloves">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cleaning_gloves.jpg" alt="Gloves">
+    <h2>Cleaning Gloves</h2>
+    <p><strong>Definition:</strong> Protective hand coverings made of rubber, latex, or plastic.</p>
+    <p><strong>Uses:</strong> Protecting hands from chemicals, dirt, and germs during cleaning.</p>
+    <div class="qr-code"><canvas id="qr-gloves"></canvas></div>
+  </div>
+
+  <!-- Tool 9: Scrub Brush -->
+  <div class="tool-card" id="scrub">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Scrub_brush.jpg" alt="Scrub Brush">
+    <h2>Scrub Brush</h2>
+    <p><strong>Definition:</strong> A brush with stiff bristles used for scrubbing tough dirt and stains.</p>
+    <p><strong>Uses:</strong> Cleaning floors, tiles, sinks, and other hard surfaces.</p>
+    <div class="qr-code"><canvas id="qr-scrub"></canvas></div>
+  </div>
+
+  <!-- Tool 10: Spray Bottle -->
+  <div class="tool-card" id="spray">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Spray_bottle.jpg" alt="Spray Bottle">
+    <h2>Spray Bottle</h2>
+    <p><strong>Definition:</strong> A plastic bottle with a trigger nozzle for spraying liquids.</p>
+    <p><strong>Uses:</strong> Spraying water, disinfectants, or cleaning solutions on surfaces.</p>
+    <div class="qr-code"><canvas id="qr-spray"></canvas></div>
+  </div>
+
+</div>
+
+<script>
+  // Generate QR codes for each tool
+  function generateQRCode(id, url) {
+    new QRious({
+      element: document.getElementById(id),
+      value: url,
+      size: 120
+    });
+  }
+
+  // Auto-generate based on section IDs
+  const tools = ["broom","dustpan","mop","bucket","vacuum","duster","sponge","gloves","scrub","spray"];
+  tools.forEach(tool => {
+    generateQRCode("qr-" + tool, window.location.href.split('#')[0] + "#" + tool);
+  });
+
+  // Search filter
+  document.getElementById("searchBar").addEventListener("keyup", function() {
+    let filter = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".tool-card");
+    cards.forEach(card => {
+      let text = card.innerText.toLowerCase();
+      card.style.display = text.includes(filter) ? "" : "none";
+    });
+  });
+</script>
+
+</body>
+</html>
